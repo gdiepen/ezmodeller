@@ -316,6 +316,7 @@ class TransportProblemConstraints(ConstraintsCollection):
 ```
 
 By importing this typing hints file in for example a constraint definition like `RespectSupply`, your editor will be able to provide the following hints for you:
+![image](https://github.com/user-attachments/assets/c2535123-925a-4a23-a25e-918b5d62ca93)
 
 
 
