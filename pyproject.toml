@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=61","setuptools_scm>=8"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ezmodeller"
+dynamic = ["version"]
+authors = [
+    { name = "Guido Diepen", email = "site-ezmodeller@guidodiepen.nl" },
+]
+description = "Package to allow for easy/structured modeling and splitting up your model into multiple files"
+readme = "README.md"
+requires-python = ">=3.10"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+]
+dependencies = [
+    "gurobipy>=10.0.0",
+]
+license = "Apache License 2.0"
+
+[project.urls]
+"Homepage" = "https://github.com/gdiepen/ezmodeller"
+"Bug Tracker" = "https://github.com/gdiepen/ezmodeller/issues"
+"Documentation" = "https://github.com/gdiepen/ezmodeller"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools_scm]
