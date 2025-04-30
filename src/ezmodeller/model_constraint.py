@@ -74,6 +74,9 @@ class ModelConstraint(Generic[D]):
                 f"No set_constraint_properties function defined in constraint class {self.__class__.__module__ + '.' +self.__class__.__qualname__}"
             )
 
+        if self.name == "":
+            self.name = self.__class__.__qualname__
+
         missing_variables = [
             x
             for x in self.required_variables
@@ -82,11 +85,8 @@ class ModelConstraint(Generic[D]):
 
         if len(missing_variables):
             raise OptimizationModelMissingVariablesError(
-                f"The following required variables are not defined in the model: {', '.join(missing_variables)}"
+                f"The following variables required by symbolic constraint {self.name} are not defined in the model: {', '.join(missing_variables)}"
             )
-
-        if self.name == "":
-            self.name = self.__class__.__qualname__
 
     def get_gurobi_constraints_generator(self, input_data, variables):
         """Function that needs to be implemented to return the generator that creates
