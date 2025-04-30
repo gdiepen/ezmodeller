@@ -389,6 +389,9 @@ class OptimizationModel:
 
         # Use sorted here to ensure we always loop over the constraints in the same way
         for _constraint_name in sorted(self.constraints.keys()):
+            logger.debug(
+                f"Going to generate constraints for symbolic constraint {_constraint_name}"
+            )
             # Reset the access counter we use to check which variables the user used
             for _var in self.variables.keys():
                 self.variable_accessed[_var] = 0
