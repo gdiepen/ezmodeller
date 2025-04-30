@@ -85,7 +85,7 @@ class ModelConstraint(Generic[D]):
 
         if len(missing_variables):
             raise OptimizationModelMissingVariablesError(
-                f"The following required variables are not defined in the model: {', '.join(missing_variables)}"
+                f"The following variables required by symbolic constraint {self.name} are not defined in the model: {', '.join(missing_variables)}"
             )
 
     def get_gurobi_constraints_generator(self, input_data, variables):
